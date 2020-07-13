@@ -20,6 +20,42 @@ body {
     overflow-x: hidden;
 }
 
+/* CSS SECTION ABOUT ME */
+
+.about {
+    background-image: url('../images/montaje_foto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 99;
+    box-sizing: border-box;
+    /* display: none; */
+}
+
+.fermer {
+    width: 20px;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.about h3 {
+    padding: 200px 25px 0;
+    margin: 0;
+    font-size: 1.5em;
+    color: #00FFFF;
+}
+
+.about p {
+    font-size: .6em;
+    line-height: 20px;
+    padding: 0 40px 40px;
+    margin: 0;
+}
+
 header {
     min-height: 100vh;
     transform-style: inherit;
