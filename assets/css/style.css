@@ -16,7 +16,6 @@ body {
     /* transform-style: preserve-3d; */
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -56,38 +55,25 @@ body {
     margin: 0;
 }
 
-header {
-    min-height: 100vh;
-    transform-style: inherit;
-    text-align: center;
-}
-
-header,
-header:before {
-    background: 50% 50% / cover;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    background: url('../images/photo_fond.jpg');
-    background-size: cover;
-    transform-origin: center center 0;
-    background-position-x: center;
-    background-repeat: no-repeat;
-    transform: translateZ(-1px) scale(2);
-    z-index: -1;
-    min-height: 100vh;
-}
+/* CSS NAV*/
 
 nav {
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 98;
+}
+
+nav p {
+    margin: 0;
+    transform: rotate(270deg);
+    width: fit-content;
+    font-size: .5em;
     position: absolute;
+    padding: 0;
+    top: 40px;
+    color: #00FFFF;
+    cursor: pointer;
 }
 
 .logos {
@@ -106,11 +92,11 @@ nav {
     border-radius: 50%;
     display: block;
     margin: 0;
+    padding: 3px;
 }
 
 .logos a img {
-    width: 80%;
-    padding-top: 3px;
+    width: 100%;
 }
 
 .logos a:hover {
@@ -120,6 +106,26 @@ nav {
 .logos a:active {
     box-shadow: 0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF,
                 0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF;
+}
+
+/* CSS HEADER */
+
+header {
+    text-align: center;
+    content: "";
+/*     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0; */
+    display: block;
+    background: url('../images/photo_fond.jpg');
+    background-size: cover;
+    transform-origin: center center 0;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    transform: translateZ(-1px) scale(2);
+    min-height: 100vh;
 }
 
 header h1 {
@@ -251,73 +257,59 @@ span {
 
 .logosDev {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-image: url('../svg/code_noir.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+    background-color: #1A1A1A;
 }
 
 .logosDev .mesLogos {
-    width: 100%;
-    position: absolute;
+    width: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 40px;
+    margin: auto;
+    padding: 50px 0;
 }
 
 .logosDev .mesLogos img {
-    width: 17%;
+    width: 20%;
     padding: 10px;
+    min-height: 20px;
 }
-
-.textureCode2 {
-    width: 50%;
-    height: 100vh;
-}
-
-.textureCode2 img {
-    width: 70%;
-    height: 100vh;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-}
-
 
 /* CSS SECTION REALISATIONS */
 
 #realisations {
     width: 100%;
+    padding-top: 50px;
 }
 
 .container {
     z-index: 5;
     /* position: absolute; */
     top: 150vh;
-    background: #1A1A1A;
+    background: black;
     line-height: 30px;
     font-weight: lighter;
     color: grey;
 }
 
 h2 {
-    margin: 0;
+    margin: 0 auto;
     padding: 10px;
     text-align: center;
-    font-size: .7em;
-    letter-spacing: 5px;
+    font-size: 1em;
     cursor: pointer;
-    color: #6d6e70;
+    color: #1A1A1A;
+    width: fit-content;
 }
 
-h2 span {
-    transition: 0.5s;
-}
-
-h2:hover span {
+h2:hover {
     color: #00FFFF;
     text-shadow: 0 0 10px #00FFFF,
                  0 0 20px #00FFFF,
@@ -325,18 +317,6 @@ h2:hover span {
                  0 0 80px #00FFFF,
                  0 0 120px #00FFFF,
                  0 0 160px #00FFFF;
-}
-
-h2:hover span:nth-child(1) {
-    margin-right: 10px;
-}
-
-h2:hover span:nth-child(1):after {
-    content: "dernières";
-}
-
-h2:hover span:nth-child(2) {
-    margin-left: 10px;
 }
 
 #mesprojets {
@@ -401,86 +381,38 @@ h2:hover span:nth-child(2) {
 /*  CSS FOOTER */
 
 footer {
-    width: 100%;
     height: 10vh;
-    background-color: #1A1A1A;
+    background-color: black;
     display: flex;
     justify-content: space-around;
+    padding: 10px;
 }
 
 .monBouton {
-    width: 100px;
-    height: 12px;
-    padding: 10px;
+    width: auto;
+    height: auto;
+    padding: 9px;
     text-decoration: none;
     text-align: center;
-    background-color: #1A1A1A;
+    background-color: black;
     border-radius: 20px;
-    border: 2px solid #00FFFF;
+    border: 1px solid #00FFFF;
     cursor: pointer;
-    margin: 0;
-    transform: translate(-50%, -50%);
+    margin: 10px 0;
     color: #00FFFF;
     font-size: .6em;
-    transition: 1.5s;
-    position: fixed;
-    bottom: 0;
+    /* transition: 1.5s; */
 }
 
 .monBouton:hover {
-    box-shadow: 0 2px 20px 0 #00FFFF inset, 0 2px 20px 0 #00FFFF,
-                0 2px 20px 0 #00FFFF inset, 0 2px 20px 0 #00FFFF;
-    text-shadow: 0 0 2px #00FFFF, 0 0 2px #00FFFF;
+    box-shadow: 0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF,
+                0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF;
+    text-shadow: 0 0 1px #00FFFF, 0 0 1px #00FFFF;
 }
 .monBouton:active {
-    box-shadow: 0 2px 20px 0 #00FFFF inset, 0 2px 20px 0 #00FFFF,
-                0 2px 20px 0 #00FFFF inset, 0 2px 20px 0 #00FFFF;
-    text-shadow: 0 0 2px #00FFFF, 0 0 2px #00FFFF;
+    box-shadow: 0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF,
+                0 1px 10px 0 #00FFFF inset, 0 1px 10px 0 #00FFFF;
+    text-shadow: 0 0 1px #00FFFF, 0 0 1px #00FFFF;
 }
 
-label {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-label .btn {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #1A1A1A;
-    border-radius: 50%;
-    box-shadow: 0 3px 4px rgba(0,0,0,1),
-                inset 0 -2px 5px rgba(0,0,0,1),
-                inset 0 2px 2px rgba(255, 255, 255, 0.5),
-                0 0 0 2px #000,
-                0 0 0 5px #1A1A1A,
-                0 0 0 5.5px #080808;
-}
-
-label input[type="checkbox"] {
-    -webkit-appearance: none;
-}
-
-label input[type="checkbox"]:checked ~ .btn {
-    box-shadow: 0 0 0 rgba(0,0,0,1),
-                inset 0 -2px 5px rgba(0,0,0,1),
-                inset 0 1px 1px rgba(255, 255, 255, 0.1),
-                0 0 0 2px #000,
-                0 0 0 5px #1A1A1A,
-                0 0 0 5.5px #00FFFF;
-}
-
-label input[type="checkbox"]:checked ~ .fa {
-    color: #00FFFF;
-    text-shadow: 0 0 15px #00a1ff,
-                 0 0 30px #00a1ff;
-}
-
-label .fa {
-    transform: translate(-50%, -50%);
-    font-size: 1em;
-    color: #080808;
-}
 
